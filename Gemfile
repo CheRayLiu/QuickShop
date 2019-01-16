@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -50,19 +52,13 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
 
 gem 'graphql', '1.8.11'
 gem 'graphiql-rails', '1.5.0', group: :development
 
-#Gem for graphql-error
+# Gem for graphql-error
 gem 'graphql-errors'
 
-gem 'graphql-preload','2.0.1'
-
-
-
-
+gem 'graphql-preload', '2.0.1'

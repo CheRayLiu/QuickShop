@@ -1,7 +1,8 @@
-class Resolvers::CreateShoppingCart < GraphQL::Function
+# frozen_string_literal: true
+
+class Mutations::CreateShoppingCart < GraphQL::Function
   # arguments passed as "args"
   argument :user_id, !types.ID
-
 
   # return type from the mutation
   type Types::ShoppingCartType
@@ -22,4 +23,3 @@ class Resolvers::CreateShoppingCart < GraphQL::Function
     cart
   end
 end
-

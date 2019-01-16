@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ShopiyBackendRailsSchema = GraphQL::Schema.define do
   use GraphQL::Batch
 
@@ -8,7 +10,7 @@ ShopiyBackendRailsSchema = GraphQL::Schema.define do
 end
 
 GraphQL::Errors.configure(ShopiyBackendRailsSchema) do
-  rescue_from ActiveRecord::RecordNotFound do |exception|
+  rescue_from ActiveRecord::RecordNotFound do |_exception|
     nil
   end
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -21,7 +23,7 @@ Product.create([
     price: 3.50,
     shipping: 0.99,
     inventory_count: 34,
-    sold_count: 30
+    sold_count: 30,
   },
   {
     title: 'Apple',
@@ -29,7 +31,7 @@ Product.create([
     price: 2.50,
     shipping: 0.99,
     inventory_count: 20,
-    sold_count: 30
+    sold_count: 30,
   },
   {
     title: 'banana',
@@ -37,7 +39,6 @@ Product.create([
     price: 2.50,
     shipping: 0.99,
     inventory_count: 0,
-    sold_count: 30
-  }
+    sold_count: 30,
+  },
 ])
-

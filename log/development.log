@@ -22275,3 +22275,128 @@ Processing by GraphqlController#execute as */*
 Completed 200 OK in 78ms (Views: 6.6ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-01-15 19:32:18 -0500
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ray/.rvm/gems/ruby-2.5.2/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ray/.rvm/gems/ruby-2.5.2/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ray/.rvm/gems/ruby-2.5.2/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (2.1ms)
+Completed 200 OK in 15ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/graphiql" for 127.0.0.1 at 2019-01-15 19:32:19 -0500
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /Users/ray/.rvm/gems/ruby-2.5.2/gems/graphiql-rails-1.5.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /Users/ray/.rvm/gems/ruby-2.5.2/gems/graphiql-rails-1.5.0/app/views/graphiql/rails/editors/show.html.erb (281.0ms)
+Completed 200 OK in 300ms (Views: 292.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-01-15 19:32:20 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "graphql"=>{"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  "}}
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (Resolvers is not a class):
+  
+app/graphql/resolvers/purchase_by_id.rb:3:in `<main>'
+app/graphql/types/mutation_type.rb:7:in `block in <main>'
+app/graphql/shopiy_backend_rails_schema.rb:12:in `<main>'
+app/controllers/graphql_controller.rb:10:in `execute'
+Started POST "/graphql" for 127.0.0.1 at 2019-01-15 19:39:01 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ray/.rvm/gems/ruby-2.5.2/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  create_shopping_cart(user_id: 2){\n    completed,\n    user_id,\n    total_cost,\n    cart_items{\n      product_id,\n      quantity\n\t\t}\n  }\n  \n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  create_shopping_cart(user_id: 2){\n    completed,\n    user_id,\n    total_cost,\n    cart_items{\n      product_id,\n      quantity\n\t\t}\n  }\n  \n}", "variables"=>nil}}
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant Resolvers):
+  
+app/graphql/mutations/add_to_cart.rb:3:in `<main>'
+app/graphql/types/mutation_type.rb:8:in `block in <main>'
+app/graphql/shopiy_backend_rails_schema.rb:12:in `<main>'
+app/controllers/graphql_controller.rb:10:in `execute'
+Started POST "/graphql" for 127.0.0.1 at 2019-01-15 19:39:39 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ray/.rvm/gems/ruby-2.5.2/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  create_shopping_cart(user_id: 2){\n    completed,\n    user_id,\n    total_cost,\n    cart_items{\n      product_id,\n      quantity\n\t\t}\n  }\n  \n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  create_shopping_cart(user_id: 2){\n    completed,\n    user_id,\n    total_cost,\n    cart_items{\n      product_id,\n      quantity\n\t\t}\n  }\n  \n}", "variables"=>nil}}
+  [1m[36mShoppingCart Load (13.5ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."user_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/graphql/mutations/create_shopping_cart.rb:15
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/graphql/mutations/create_shopping_cart.rb:17
+  [1m[36mShoppingCart Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "shopping_carts" WHERE "shopping_carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/graphql/mutations/create_shopping_cart.rb:17
+  [1m[35m (2.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/graphql/mutations/create_shopping_cart.rb:17
+Completed 200 OK in 114ms (Views: 0.4ms | ActiveRecord: 44.1ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-01-15 19:44:46 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  create_shopping_cart(user_id: 2){\n    completed,\n    user_id,\n    total_cost,\n    cart_items{\n      product_id,\n      quantity\n\t\t}\n  }\n  \n}", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  create_shopping_cart(user_id: 2){\n    completed,\n    user_id,\n    total_cost,\n    cart_items{\n      product_id,\n      quantity\n\t\t}\n  }\n  \n}", "variables"=>nil}}
+  [1m[36mShoppingCart Load (0.7ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."user_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/graphql/mutations/create_shopping_cart.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/graphql/mutations/create_shopping_cart.rb:17
+  [1m[36mShoppingCart Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "shopping_carts" WHERE "shopping_carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/graphql/mutations/create_shopping_cart.rb:17
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/graphql/mutations/create_shopping_cart.rb:17
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-01-15 19:44:49 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  clear_cart(\n  user_id: 2\n  ){\tcompleted,\n      total_cost,\n      user_id,\n    \tcart_items{\n        product_id,\n        quantity\n      }\n\n    }\n  }\n  \n", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  clear_cart(\n  user_id: 2\n  ){\tcompleted,\n      total_cost,\n      user_id,\n    \tcart_items{\n        product_id,\n        quantity\n      }\n\n    }\n  }\n  \n", "variables"=>nil}}
+  [1m[36mShoppingCart Load (1.5ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/graphql/mutations/clear_cart.rb:15
+  [1m[36mCartItem Update All (10.3ms)[0m  [1m[33mUPDATE "cart_items" SET "shopping_cart_id" = NULL WHERE "cart_items"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 1]]
+  ↳ app/graphql/mutations/clear_cart.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/graphql/mutations/clear_cart.rb:18
+  [1m[36mShoppingCart Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "shopping_carts" WHERE "shopping_carts"."user_id" = $1 AND "shopping_carts"."id" != $2 LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  ↳ app/graphql/mutations/clear_cart.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/graphql/mutations/clear_cart.rb:18
+  [1m[36mShoppingCart Load (0.4ms)[0m  [1m[34mSELECT  "shopping_carts".* FROM "shopping_carts" WHERE "shopping_carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/graphql/mutations/clear_cart.rb:19
+  [1m[36mCartItem Load (0.4ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."shopping_cart_id" = $1[0m  [["shopping_cart_id", 1]]
+  ↳ app/controllers/graphql_controller.rb:10
+Completed 200 OK in 89ms (Views: 0.3ms | ActiveRecord: 18.4ms)
+
+
+Started GET "/graphiql" for 127.0.0.1 at 2019-01-15 19:44:57 -0500
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /Users/ray/.rvm/gems/ruby-2.5.2/gems/graphiql-rails-1.5.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /Users/ray/.rvm/gems/ruby-2.5.2/gems/graphiql-rails-1.5.0/app/views/graphiql/rails/editors/show.html.erb (329.2ms)
+Completed 200 OK in 350ms (Views: 343.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-01-15 19:44:57 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "graphql"=>{"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  "}}
+Completed 200 OK in 97ms (Views: 21.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-15 20:07:36 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ray/.rvm/gems/ruby-2.5.2/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /Users/ray/.rvm/gems/ruby-2.5.2/gems/graphiql-rails-1.5.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /Users/ray/.rvm/gems/ruby-2.5.2/gems/graphiql-rails-1.5.0/app/views/graphiql/rails/editors/show.html.erb (271.5ms)
+Completed 200 OK in 295ms (Views: 283.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-01-15 20:07:37 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "graphql"=>{"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  "}}
+Completed 200 OK in 80ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
