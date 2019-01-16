@@ -23054,3 +23054,74 @@ Processing by GraphqlController#execute as */*
 Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-01-16 14:36:11 -0500
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ray/.rvm/gems/ruby-2.5.2/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ray/.rvm/gems/ruby-2.5.2/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ray/.rvm/gems/ruby-2.5.2/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 15ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/graphiql" for 127.0.0.1 at 2019-01-16 14:36:15 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/graphiql"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/graphql" for 127.0.0.1 at 2019-01-16 14:36:17 -0500
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /Users/ray/.rvm/gems/ruby-2.5.2/gems/graphiql-rails-1.5.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /Users/ray/.rvm/gems/ruby-2.5.2/gems/graphiql-rails-1.5.0/app/views/graphiql/rails/editors/show.html.erb (226.3ms)
+Completed 200 OK in 244ms (Views: 238.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-01-16 14:36:18 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "graphql"=>{"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  "}}
+Completed 200 OK in 84ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-01-16 14:37:48 -0500
+Processing by GraphqlController#execute as JSON
+  Parameters: {"query"=>"query IntrospectionQuery {\n    __schema {\n      queryType { name description kind}\n      mutationType { name description kind }\n      subscriptionType { name description kind }\n      types {\n        name\n        kind\n        description\n        ...FullType\n      }\n      directives {\n        name\n        description\n        locations\n        args {\n          ...InputValue\n        }\n      }\n    }\n  }\n\n  \n  fragment FullType on __Type {\n    fields(includeDeprecated: true) {\n      name\n      description\n      args {\n        ...InputValue\n      }\n      type {\n        ...TypeRef\n      }\n      isDeprecated\n      deprecationReason\n    }\n    inputFields {\n      ...InputValue\n    }\n    interfaces {\n      ...TypeRef\n    }\n    enumValues(includeDeprecated: true) {\n      name\n      description\n      isDeprecated\n      deprecationReason\n    }\n    possibleTypes {\n      ...TypeRef\n    }\n  }\n  \n  fragment InputValue on __InputValue {\n    name\n    description\n    type { ...TypeRef }\n    defaultValue\n  }\n  \n  fragment TypeRef on __Type {\n    kind\n    name\n    description\n    ofType {\n      kind\n      name\n      description\n      ofType {\n        kind\n        name\n        description\n        ofType {\n          kind\n          name\n          description\n          ofType {\n            kind\n            name\n            description\n            ofType {\n              kind\n              name\n              description\n              ofType {\n                kind\n                name\n                description\n                ofType {\n                  kind\n                  name\n                  description\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n", "graphql"=>{"query"=>"query IntrospectionQuery {\n    __schema {\n      queryType { name description kind}\n      mutationType { name description kind }\n      subscriptionType { name description kind }\n      types {\n        name\n        kind\n        description\n        ...FullType\n      }\n      directives {\n        name\n        description\n        locations\n        args {\n          ...InputValue\n        }\n      }\n    }\n  }\n\n  \n  fragment FullType on __Type {\n    fields(includeDeprecated: true) {\n      name\n      description\n      args {\n        ...InputValue\n      }\n      type {\n        ...TypeRef\n      }\n      isDeprecated\n      deprecationReason\n    }\n    inputFields {\n      ...InputValue\n    }\n    interfaces {\n      ...TypeRef\n    }\n    enumValues(includeDeprecated: true) {\n      name\n      description\n      isDeprecated\n      deprecationReason\n    }\n    possibleTypes {\n      ...TypeRef\n    }\n  }\n  \n  fragment InputValue on __InputValue {\n    name\n    description\n    type { ...TypeRef }\n    defaultValue\n  }\n  \n  fragment TypeRef on __Type {\n    kind\n    name\n    description\n    ofType {\n      kind\n      name\n      description\n      ofType {\n        kind\n        name\n        description\n        ofType {\n          kind\n          name\n          description\n          ofType {\n            kind\n            name\n            description\n            ofType {\n              kind\n              name\n              description\n              ofType {\n                kind\n                name\n                description\n                ofType {\n                  kind\n                  name\n                  description\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n"}}
+Completed 200 OK in 56ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-01-16 14:46:20 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  all_products(all_avail: false){\n  \ttitle,\n    description,\n    inventory_count\n  }\n  \n}", "variables"=>nil, "graphql"=>{"query"=>"query {\n  all_products(all_avail: false){\n  \ttitle,\n    description,\n    inventory_count\n  }\n  \n}", "variables"=>nil}}
+  [1m[36mProduct Load (4.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/graphql_controller.rb:10
+Completed 200 OK in 41ms (Views: 0.2ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-16 15:12:50 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ray/.rvm/gems/ruby-2.5.2/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
