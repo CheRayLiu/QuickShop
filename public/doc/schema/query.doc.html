@@ -95,9 +95,9 @@
                 Product
             </a>
         </li>
-        <li  title="shopping_cart">
+        <li  title="Shopping_cart">
             <a href="shopping_cart.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
-                shopping_cart
+                Shopping_cart
             </a>
         </li>
         <li  title="__Directive">
@@ -167,7 +167,8 @@
     <div class="container">
         <p class="slds-text-title--caps slds-text-color--weak">OBJECT</p>
         <h1 class="slds-text-heading--large">Query</h1>
-        <div class="slds-text-body--regular"></div>
+        <div class="slds-text-body--regular"><p>The schema’s entry-point for queries. This acts as the public, top-level API from which all queries must start.</p>
+</div>
     </div>
 </section>
 <section>
@@ -178,7 +179,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><ul class="code" style="padding-left:42px"><li><span class="keyword operator ts">type</span> <span class="identifier">Query</span> {</li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>all_avail</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">all_products</span>(<span class="meta">all_avail</span>: <a class="support type" href="boolean.doc.html">Boolean</a>!): [<a class="support type" href="product.doc.html">Product</a>]! </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>product_id</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">product_by_id</span>(<span class="meta">product_id</span>: <a class="support type" href="id.doc.html">ID</a>!): [<a class="support type" href="product.doc.html">Product</a>]! </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>user_id</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">shopping_cart_by_id</span>(<span class="meta">user_id</span>: <a class="support type" href="id.doc.html">ID</a>!): [<a class="support type" href="shopping_cart.doc.html">shopping_cart</a>]! </span></li><li>}</li></ul></code>
+        <code class="highlight"><ul class="code" style="padding-left:42px"><li><span class="keyword operator ts">type</span> <span class="identifier">Query</span> {</li><li></li><li><span class="tab"><span class="comment line">#   Return all products with the option of only returning products with available </span></span></li><li><span class="tab"><span class="comment line">#   inventory</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>all_avail</strong>: True to only return products with available </span></span></li><li><span class="tab"><span class="comment line">#   inventory, False if not</span></span></li><li><span class="tab"><span class="meta">all_products</span>(<span class="meta">all_avail</span>: <a class="support type" href="boolean.doc.html">Boolean</a>!): [<a class="support type" href="product.doc.html">Product</a>]! </span></li><li></li><li><span class="tab"><span class="comment line">#   Return product with the specified product id</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>product_id</strong>: Specified product_id</span></span></li><li><span class="tab"><span class="meta">product_by_id</span>(<span class="meta">product_id</span>: <a class="support type" href="id.doc.html">ID</a>!): [<a class="support type" href="product.doc.html">Product</a>]! </span></li><li></li><li><span class="tab"><span class="comment line">#   Return shopping cart based on specified user_id</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>user_id</strong>: Specified user_id</span></span></li><li><span class="tab"><span class="meta">shopping_cart_by_id</span>(<span class="meta">user_id</span>: <a class="support type" href="id.doc.html">ID</a>!): [<a class="support type" href="shopping_cart.doc.html">Shopping_cart</a>]! </span></li><li>}</li></ul></code>
     </div>
 </section>
 <section>

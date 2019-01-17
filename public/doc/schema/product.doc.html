@@ -95,9 +95,9 @@
                 Product
             </a>
         </li>
-        <li  title="shopping_cart">
+        <li  title="Shopping_cart">
             <a href="shopping_cart.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
-                shopping_cart
+                Shopping_cart
             </a>
         </li>
         <li  title="__Directive">
@@ -167,7 +167,8 @@
     <div class="container">
         <p class="slds-text-title--caps slds-text-color--weak">OBJECT</p>
         <h1 class="slds-text-heading--large">Product</h1>
-        <div class="slds-text-body--regular"></div>
+        <div class="slds-text-body--regular"><p>Product represents a collection information of products</p>
+</div>
     </div>
 </section>
 <section>
@@ -178,7 +179,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><ul class="code" style="padding-left:42px"><li><span class="keyword operator ts">type</span> <span class="identifier">Product</span> {</li><li></li><li><span class="tab"><span class="meta">description</span>: <a class="support type" href="string.doc.html">String</a>! </span></li><li></li><li><span class="tab"><span class="meta">inventory_count</span>: <a class="support type" href="int.doc.html">Int</a>! </span></li><li></li><li><span class="tab"><span class="meta">price</span>: <a class="support type" href="float.doc.html">Float</a>! </span></li><li></li><li><span class="tab"><span class="meta">shipping</span>: <a class="support type" href="float.doc.html">Float</a>! </span></li><li></li><li><span class="tab"><span class="meta">sold_count</span>: <a class="support type" href="int.doc.html">Int</a>! </span></li><li></li><li><span class="tab"><span class="meta">title</span>: <a class="support type" href="string.doc.html">String</a>! </span></li><li>}</li></ul></code>
+        <code class="highlight"><ul class="code" style="padding-left:42px"><li><span class="keyword operator ts">type</span> <span class="identifier">Product</span> {</li><li></li><li><span class="tab"><span class="comment line">#   Description of product</span></span></li><li><span class="tab"><span class="meta">description</span>: <a class="support type" href="string.doc.html">String</a>! </span></li><li></li><li><span class="tab"><span class="comment line">#   Inventory count of product</span></span></li><li><span class="tab"><span class="meta">inventory_count</span>: <a class="support type" href="int.doc.html">Int</a>! </span></li><li></li><li><span class="tab"><span class="comment line">#   Price of product</span></span></li><li><span class="tab"><span class="meta">price</span>: <a class="support type" href="float.doc.html">Float</a>! </span></li><li></li><li><span class="tab"><span class="comment line">#   Shipping cost of product</span></span></li><li><span class="tab"><span class="meta">shipping</span>: <a class="support type" href="float.doc.html">Float</a>! </span></li><li></li><li><span class="tab"><span class="comment line">#   Sold count of product</span></span></li><li><span class="tab"><span class="meta">sold_count</span>: <a class="support type" href="int.doc.html">Int</a>! </span></li><li></li><li><span class="tab"><span class="comment line">#   Title of product</span></span></li><li><span class="tab"><span class="meta">title</span>: <a class="support type" href="string.doc.html">String</a>! </span></li><li>}</li></ul></code>
     </div>
 </section>
 <section>
@@ -189,7 +190,7 @@
             </a>
             Require by
         </h2>
-        <ul class="require-by"><li><a href="mutation.doc.html" title="Mutation - ">Mutation<em>null</em></a><li><li><a href="query.doc.html" title="Query - ">Query<em>null</em></a><li></ul>
+        <ul class="require-by"><li><a href="mutation.doc.html" title="Mutation - The schema’s entry-point for mutations. This acts as the public, top-level API from which all mutation queries must start.">Mutation<em>The schema’s entry-point for mutations. This acts as the public, top-level API from which all mutation queries must start.</em></a><li><li><a href="query.doc.html" title="Query - The schema’s entry-point for queries. This acts as the public, top-level API from which all queries must start.">Query<em>The schema’s entry-point for queries. This acts as the public, top-level API from which all queries must start.</em></a><li></ul>
     </div>
 </section>
 <footer>

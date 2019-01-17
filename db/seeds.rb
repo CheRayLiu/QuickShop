@@ -23,7 +23,7 @@ Product.create([
     price: 3.50,
     shipping: 0.99,
     inventory_count: 34,
-    sold_count: 30,
+    sold_count: 0,
   },
   {
     title: 'Apple',
@@ -31,7 +31,7 @@ Product.create([
     price: 2.50,
     shipping: 0.99,
     inventory_count: 20,
-    sold_count: 30,
+    sold_count: 0,
   },
   {
     title: 'banana',
@@ -39,6 +39,6 @@ Product.create([
     price: 2.50,
     shipping: 0.99,
     inventory_count: 0,
-    sold_count: 30,
+    sold_count: 0,
   },
 ])

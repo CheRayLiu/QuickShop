@@ -95,9 +95,9 @@
                 Product
             </a>
         </li>
-        <li  title="shopping_cart">
+        <li  title="Shopping_cart">
             <a href="shopping_cart.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
-                shopping_cart
+                Shopping_cart
             </a>
         </li>
         <li  title="__Directive">
@@ -167,7 +167,8 @@
     <div class="container">
         <p class="slds-text-title--caps slds-text-color--weak">OBJECT</p>
         <h1 class="slds-text-heading--large">Cart_Item</h1>
-        <div class="slds-text-body--regular"></div>
+        <div class="slds-text-body--regular"><p>Cart item is a collection of information about the cart item such as quantity, shopping cart id and product id</p>
+</div>
     </div>
 </section>
 <section>
@@ -178,7 +179,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><ul class="code" style="padding-left:28px"><li><span class="keyword operator ts">type</span> <span class="identifier">Cart_Item</span> {</li><li></li><li><span class="tab"><span class="meta">product_id</span>: <a class="support type" href="int.doc.html">Int</a>! </span></li><li></li><li><span class="tab"><span class="meta">quantity</span>: <a class="support type" href="int.doc.html">Int</a>! </span></li><li></li><li><span class="tab"><span class="meta">shopping_carts_id</span>: <a class="support type" href="int.doc.html">Int</a>! </span></li><li>}</li></ul></code>
+        <code class="highlight"><ul class="code" style="padding-left:42px"><li><span class="keyword operator ts">type</span> <span class="identifier">Cart_Item</span> {</li><li></li><li><span class="tab"><span class="comment line">#   Product id of the cart item</span></span></li><li><span class="tab"><span class="meta">product_id</span>: <a class="support type" href="int.doc.html">Int</a>! </span></li><li></li><li><span class="tab"><span class="comment line">#   Quantity of the cart item</span></span></li><li><span class="tab"><span class="meta">quantity</span>: <a class="support type" href="int.doc.html">Int</a>! </span></li><li></li><li><span class="tab"><span class="comment line">#   Shopping cart id of the cart item</span></span></li><li><span class="tab"><span class="meta">shopping_carts_id</span>: <a class="support type" href="int.doc.html">Int</a>! </span></li><li>}</li></ul></code>
     </div>
 </section>
 <section>
@@ -189,7 +190,7 @@
             </a>
             Require by
         </h2>
-        <ul class="require-by"><li><a href="shopping_cart.doc.html" title="shopping_cart - ">shopping_cart<em>null</em></a><li></ul>
+        <ul class="require-by"><li><a href="shopping_cart.doc.html" title="Shopping_cart - Shopping cart is collection of information about the shopping cart">Shopping_cart<em>Shopping cart is collection of information about the shopping cart</em></a><li></ul>
     </div>
 </section>
 <footer>

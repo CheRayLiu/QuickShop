@@ -2,7 +2,7 @@
 
 class Mutations::CheckOutCart < GraphQL::Function
   # arguments passed as "args"
-  argument :user_id, !types.ID
+  argument :user_id, !types.ID, description: "User id of shopping cart"
 
   # return type from the mutation
   type Types::ShoppingCartType
@@ -19,6 +19,7 @@ class Mutations::CheckOutCart < GraphQL::Function
         raise GraphQL::ExecutionError, "Quantity requested: #{cart_item.quantity}. Current inventory count for product: #{cur_product.inventory_count}."
       else
         cur_product.inventory_count -= cart_item.quantity
+        cur_product.sold_count +=cart_item.quantity
         cur_product.save
         cart_item.destroy
       end

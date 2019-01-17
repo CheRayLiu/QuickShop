@@ -2,7 +2,7 @@
 
 class Mutations::PurchaseById< GraphQL::Function
     # arguments passed as "args"
-    argument :product_id, !types.ID
+    argument :product_id, !types.ID, "Product id of product"
 
     # return type from the mutation
     type Types::ProductType

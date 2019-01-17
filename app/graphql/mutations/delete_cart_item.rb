@@ -2,8 +2,8 @@
 
 class Mutations::DeleteCartItem < GraphQL::Function
   # arguments passed as "args"
-  argument :user_id, !types.ID
-  argument :product_id, !types.ID
+  argument :user_id, !types.ID, description: "User id of shopping cart"
+  argument :product_id, !types.ID, description: "Product id of product"
 
   # return type from the mutation
   type Types::ShoppingCartType

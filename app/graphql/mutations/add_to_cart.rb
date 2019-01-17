@@ -2,9 +2,9 @@
 
 class Mutations::AddToCart < GraphQL::Function
   # arguments passed as "args"
-  argument :user_id, !types.ID
-  argument :product_id, !types.ID
-  argument :quantity, !types.Int
+  argument :user_id, !types.ID, description: "User id of the shopping cart"
+  argument :product_id, !types.ID, description: "Product id of the product"
+  argument :quantity, !types.Int, description: "Quantity of the product"
 
   # return type from the mutation
   type Types::ShoppingCartType
