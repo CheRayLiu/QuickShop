@@ -10,7 +10,7 @@ class Mutations::PurchaseById< GraphQL::Function
     # the mutation method
     # _obj - is parent object, which in this case is nil
     # args - are the arguments passed
-    # _ctx - is the GraphQL context (which would be discussed later)
+    # _ctx - is the GraphQL context
     def call(_obj, args, _ctx)
       product = Product.find_by(id: args[:product_id])
       if product.inventory_count == 0

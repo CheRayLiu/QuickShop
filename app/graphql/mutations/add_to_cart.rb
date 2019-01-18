@@ -12,7 +12,7 @@ class Mutations::AddToCart < GraphQL::Function
   # the mutation method
   # _obj - is parent object, which in this case is nil
   # args - are the arguments passed
-  # _ctx - is the GraphQL context (which would be discussed later)
+  # _ctx - is the GraphQL context 
   def call(_obj, args, _ctx)
     product = Product.find_by(id: args[:product_id])
     cart = ShoppingCart.find_by(user_id: args[:user_id])
@@ -20,7 +20,9 @@ class Mutations::AddToCart < GraphQL::Function
     cart.save
     existing = cart.cart_items.find_by(product_id: product.id)
     if existing.nil?
-      item = cart.cart_items.create!(product_id: product.id, quantity: args[:quantity])
+      item = cart.cart_items.create(:product_id => product.id, :quantity => args[:quantity])
+      cart.save
+      puts cart.cart_items
     else
       existing.quantity += args[:quantity]
       existing.save
@@ -29,4 +31,4 @@ class Mutations::AddToCart < GraphQL::Function
     cart.save
     cart
   end
-  end
+end
