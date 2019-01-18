@@ -26313,3 +26313,66 @@ Completed 200 OK in 121ms (Views: 8.5ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/" for 127.0.0.1 at 2019-01-18 15:43:34 -0500
+Started GET "/" for 127.0.0.1 at 2019-01-18 16:30:01 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ray/.rvm/gems/ruby-2.5.2/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Started GET "/graphql" for 127.0.0.1 at 2019-01-18 16:30:04 -0500
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"/graphql"}
+  Rendering /Users/ray/.rvm/gems/ruby-2.5.2/gems/graphiql-rails-1.5.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /Users/ray/.rvm/gems/ruby-2.5.2/gems/graphiql-rails-1.5.0/app/views/graphiql/rails/editors/show.html.erb (283.8ms)
+Completed 200 OK in 308ms (Views: 298.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-01-18 16:30:05 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "graphql"=>{"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  "}}
+Completed 200 OK in 86ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-01-18 16:30:12 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  all_products(all_avail: false\n  ){\ttitle,\n  \t\tinventory_count}\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  all_products(all_avail: false\n  ){\ttitle,\n  \t\tinventory_count}\n}\n", "variables"=>nil}}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/graphql_controller.rb:10
+Completed 200 OK in 20ms (Views: 0.5ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-01-18 16:30:34 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  all_products(all_avail: true\n  ){\ttitle,\n  \t\tinventory_count}\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  all_products(all_avail: true\n  ){\ttitle,\n  \t\tinventory_count}\n}\n", "variables"=>nil}}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (inventory_count > 0)[0m
+  ↳ app/controllers/graphql_controller.rb:10
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-01-18 16:30:39 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  add_to_inventory(\n  title: \"bANAN\",\n  description: \"good to wear\",\n  Price: 3.00,\n  Shipping: 1.00,\n  quantity: 1.00\n  ){\ttitle,\n  \t\tinventory_count}\n}\n", "variables"=>nil, "graphql"=>{"query"=>"mutation {\n  add_to_inventory(\n  title: \"bANAN\",\n  description: \"good to wear\",\n  Price: 3.00,\n  Shipping: 1.00,\n  quantity: 1.00\n  ){\ttitle,\n  \t\tinventory_count}\n}\n", "variables"=>nil}}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."title" = $1 LIMIT $2[0m  [["title", "bANAN"], ["LIMIT", 1]]
+  ↳ app/graphql/mutations/add_to_inventory.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/graphql/mutations/add_to_inventory.rb:29
+  [1m[36mProduct Update (4.6ms)[0m  [1m[33mUPDATE "products" SET "inventory_count" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["inventory_count", 2], ["updated_at", "2019-01-18 21:30:39.693814"], ["id", 4]]
+  ↳ app/graphql/mutations/add_to_inventory.rb:29
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/graphql/mutations/add_to_inventory.rb:29
+Completed 200 OK in 22ms (Views: 0.2ms | ActiveRecord: 5.7ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-01-18 16:30:43 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  all_products(all_avail: true\n  ){\ttitle,\n  \t\tinventory_count}\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  all_products(all_avail: true\n  ){\ttitle,\n  \t\tinventory_count}\n}\n", "variables"=>nil}}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (inventory_count > 0)[0m
+  ↳ app/controllers/graphql_controller.rb:10
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2019-01-18 16:30:52 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  all_products(all_avail: false\n  ){\ttitle,\n  \t\tinventory_count}\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  all_products(all_avail: false\n  ){\ttitle,\n  \t\tinventory_count}\n}\n", "variables"=>nil}}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/graphql_controller.rb:10
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
