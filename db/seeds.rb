@@ -18,7 +18,7 @@ Product.create([
     featuring True Tone technology for a more true-to-life viewing experience. 
     And the versatile Touch Bar for more ways to be productive. It’s Apple’s most 
     powerful notebook. Pushed even further.",
-    price: 3,699.99,
+    price: 3699.99,
     shipping: 20.99,
     inventory_count: 374,
     sold_count: 123,
