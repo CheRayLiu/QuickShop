@@ -14,7 +14,7 @@ Product.create([
   {
     title: 'Apple MacBook Pro with Touch Bar 15.4"',
     description: "The new MacBook Pro has 6-core Intel Core processors for up to 
-    70 percent faster compute speeds.1 A brilliant and colourful Retina display 
+    70 percent faster compute speeds. A brilliant and colourful Retina display 
     featuring True Tone technology for a more true-to-life viewing experience. 
     And the versatile Touch Bar for more ways to be productive. It’s Apple’s most 
     powerful notebook. Pushed even further.",
@@ -37,32 +37,17 @@ Product.create([
     sold_count: 11,
   },
   {
-    title: 'Logitech G900 Chaos Spectrum 
+    title: 'Logitech G900 Chaos Spectrum
     Wireless/USB Optical Gaming Mouse (910-004558)',
     description: "Latency can make all the difference when you're in a 
-    high-pressure game situation. The G900 Chaos Spectrum features a 
-    1 millisecond report rate and optimized 2.4GHz wireless c
-    onnection to give you the edge in eSports competition.",
+    high-pressure game situation. The G900 Chaos Spectrum features a
+    1 millisecond report rate and optimized 2.4GHz wireless
+    connection to give you the edge in eSports competition.",
     price: 99.99,
     shipping: 10.99,
     inventory_count: 34,
     sold_count: 19,
   },
-
-
-  {
-    title: 'Logitech G900 Chaos Spectrum 
-    Wireless/USB Optical Gaming Mouse (910-004558)',
-    description: "Latency can make all the difference when you're in a 
-    high-pressure game situation. The G900 Chaos Spectrum features a 
-    1 millisecond report rate and optimized 2.4GHz wireless c
-    onnection to give you the edge in eSports competition.",
-    price: 99.99,
-    shipping: 10.99,
-    inventory_count: 34,
-    sold_count: 19,
-  },
-
   {
     title: 'Nintendo Switch Console with Neon Red/Blue Joy-Con',
     description: "Do what you never thought possible with Nintendo Switch. 
