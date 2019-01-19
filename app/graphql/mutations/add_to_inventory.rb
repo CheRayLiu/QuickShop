@@ -4,8 +4,8 @@ class Mutations::AddToInventory < GraphQL::Function
     # arguments passed as "args"
     argument :title, !types.String, description: "Title of the product being added"
     argument :description, !types.String, description: "Description of product being added"
-    argument :Price, !types.Float, description: "Price of the product being added"
-    argument :Shipping, !types.Float, description: "Shipping cost of the product being added"
+    argument :price, !types.Float, description: "Price of the product being added"
+    argument :shipping, !types.Float, description: "Shipping cost of the product being added"
     argument :quantity, !types.Int, description: "Quantity of the product being added"
     
     

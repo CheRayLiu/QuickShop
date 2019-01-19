@@ -16,15 +16,15 @@ class Mutations::AddToCart < GraphQL::Function
   def call(_obj, args, _ctx)
     product = Product.find_by(id: args[:product_id])
     cart = ShoppingCart.find_by(user_id: args[:user_id])
-    cart.completed = false
-    cart.save
     existing = cart.cart_items.find_by(product_id: product.id)
     if existing.nil?
       item = cart.cart_items.create(:product_id => product.id, :quantity => args[:quantity])
-      cart.save
+      cart.completed = false
       puts cart.cart_items
     else
       existing.quantity += args[:quantity]
+      cart.completed = false
+      cart.save
       existing.save
     end
     cart.total_cost += product.price * args[:quantity] + product.shipping
