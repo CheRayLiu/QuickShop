@@ -16,7 +16,8 @@ class Mutations::CheckOutCart < GraphQL::Function
     cart.cart_items.each do |cart_item|
       cur_product = Product.find_by(id: cart_item.product_id)
       if cur_product.inventory_count - cart_item.quantity < 0
-        raise GraphQL::ExecutionError, "Quantity requested: #{cart_item.quantity}. Current inventory count for product: #{cur_product.inventory_count}."
+        raise GraphQL::ExecutionError, "Quantity requested: #{cart_item.quantity}.
+        Current inventory count for product: #{cur_product.inventory_count}."
       else
         cur_product.inventory_count -= cart_item.quantity
         cur_product.sold_count +=cart_item.quantity

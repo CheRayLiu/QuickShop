@@ -16,7 +16,12 @@ class Mutations::AddToCart < GraphQL::Function
   def call(_obj, args, _ctx)
     product = Product.find_by(id: args[:product_id])
     cart = ShoppingCart.find_by(user_id: args[:user_id])
+    if product.nil? 
+      raise GraphQL::ExecutionError, "Product with the product id #{args[:product_id]} does not exist."
+    end
     existing = cart.cart_items.find_by(product_id: product.id)
+     
+    
     if existing.nil?
       item = cart.cart_items.create(:product_id => product.id, :quantity => args[:quantity])
       cart.completed = false
