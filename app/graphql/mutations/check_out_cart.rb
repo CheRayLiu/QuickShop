@@ -19,7 +19,7 @@ class Mutations::CheckOutCart < GraphQL::Function
         raise GraphQL::ExecutionError, "Quantity requested: #{cart_item.quantity}. Current inventory count for product: #{cur_product.inventory_count}."
       else
         cur_product.inventory_count -= cart_item.quantity
-        cur_product.sold_count += cart_item.quantity
+        cur_product.sold_count +=cart_item.quantity
         cur_product.save
         cart_item.destroy
       end
