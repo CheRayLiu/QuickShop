@@ -17,6 +17,7 @@ class Mutations::PurchaseById< GraphQL::Function
         raise GraphQL::ExecutionError, "Product with the ID: #{args[:product_id]} is out of inventory and unavailable."
       else
         product.inventory_count -= 1
+        product.sold_count +=1
         product.save
       end
       Product.find_by(id: args[:product_id])
