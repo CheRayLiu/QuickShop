@@ -12,33 +12,68 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 Product.create([
   {
-    title: 'USB-C to USB Adapter',
-    description: '* Turn any USB-C port into a USB 3.0 port
-* Connect flash drives, keyboards, or other peripherals to the new Macbook Pro and other USB-C devices
-* Compatible with tablets and smartphones with a USB Type-C connector including the Samsung Galaxy S9/S9 Plus/S8, Huawei P20/P20 Pro
-* Hi-speed USB C Male to Standard Type A USB 3.0 Data sync, Video, Audio 4-in-1 cable. The maximum data transfer rate up to 5GBit/s, USB3.0 standard
-* Reversible Design: Smaller, smarter and more convenient! Low-profile connector with a reversible design simplifies the connection.
-* Plug and unplug easily without checking for the connector orientation.
-* 90 day warranty.',
-    price: 3.50,
-    shipping: 0.99,
+    title: 'Apple MacBook Pro with Touch Bar 15.4"',
+    description: "The new MacBook Pro has 6-core Intel Core processors for up to 
+    70 percent faster compute speeds.1 A brilliant and colourful Retina display 
+    featuring True Tone technology for a more true-to-life viewing experience. 
+    And the versatile Touch Bar for more ways to be productive. It’s Apple’s most 
+    powerful notebook. Pushed even further.",
+    price: 3,699.99,
+    shipping: 20.99,
+    inventory_count: 374,
+    sold_count: 123,
+  },
+  {
+    title: 'Beats by Dr. Dre Studio3 Skyline On-Ear Noise 
+    Cancelling Bluetooth Headphones - Midnight Black',
+    description: 'Enjoy a premium listening experience and complete wireless 
+    freedom with the Beats Studio 3 over-ear headphones. 
+    Pure Adaptive Noise Canceling (Pure ANC) actively blocks unwanted external 
+    noise, while real-time audio calibration preserves the clarity, 
+    range, and emotion in your favourite music.',
+    price: 299.99,
+    shipping: 10.99,
+    inventory_count: 54,
+    sold_count: 11,
+  },
+  {
+    title: 'Logitech G900 Chaos Spectrum 
+    Wireless/USB Optical Gaming Mouse (910-004558)',
+    description: "Latency can make all the difference when you're in a 
+    high-pressure game situation. The G900 Chaos Spectrum features a 
+    1 millisecond report rate and optimized 2.4GHz wireless c
+    onnection to give you the edge in eSports competition.",
+    price: 99.99,
+    shipping: 10.99,
     inventory_count: 34,
-    sold_count: 0,
+    sold_count: 19,
   },
+
+
   {
-    title: 'Apple',
-    description: 'Good',
-    price: 2.50,
-    shipping: 0.99,
-    inventory_count: 20,
-    sold_count: 0,
+    title: 'Logitech G900 Chaos Spectrum 
+    Wireless/USB Optical Gaming Mouse (910-004558)',
+    description: "Latency can make all the difference when you're in a 
+    high-pressure game situation. The G900 Chaos Spectrum features a 
+    1 millisecond report rate and optimized 2.4GHz wireless c
+    onnection to give you the edge in eSports competition.",
+    price: 99.99,
+    shipping: 10.99,
+    inventory_count: 34,
+    sold_count: 19,
   },
+
   {
-    title: 'banana',
-    description: 'Good',
-    price: 2.50,
-    shipping: 0.99,
+    title: 'Nintendo Switch Console with Neon Red/Blue Joy-Con',
+    description: "Do what you never thought possible with Nintendo Switch. 
+    Go from single- and multi-player thrills at home, to playing 
+    the same title wherever and whenever you want. Simply attach the Joy-Con controllers to the bright,
+     hi-def display and 
+    you're all set. Or detach the controllers and 
+    give one to a friend for some on-the-go, local multiplayer action.",
+    price: 379.99,
+    shipping: 10.99,
     inventory_count: 0,
-    sold_count: 0,
+    sold_count: 235,
   },
 ])
