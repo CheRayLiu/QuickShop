@@ -13,6 +13,9 @@ class Mutations::CheckOutCart < GraphQL::Function
   # _ctx - is the GraphQL context
   def call(_obj, args, _ctx)
     cart = ShoppingCart.find_by(user_id: args[:user_id])
+    if cart.nil?
+      raise GraphQL::ExecutionError, "Shopping cart with the user_id  #{args[:user_id]} does not exist."
+    end
     cart.cart_items.each do |cart_item|
       cur_product = Product.find_by(id: cart_item.product_id)
       if cur_product.inventory_count - cart_item.quantity < 0
@@ -22,12 +25,13 @@ class Mutations::CheckOutCart < GraphQL::Function
         cur_product.inventory_count -= cart_item.quantity
         cur_product.sold_count += cart_item.quantity
         cur_product.save
-        cart_item.destroy
+        cart_item.delete
       end
     end
-    cart.completed = !cart.completed
+    cart.completed = true
     cart.total_cost = 0
     cart.save
+    cart = ShoppingCart.find_by(user_id: args[:user_id])
     cart
   end
-  end
+end
