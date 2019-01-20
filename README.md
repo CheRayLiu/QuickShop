@@ -22,8 +22,11 @@ Sample query:
 ## Running Project locally
 
 0. Install required dependencies:
+
     -Ruby
+    
     -Ruby on Rails
+    
     -PostgreSQL
 
 
