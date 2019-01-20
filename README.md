@@ -2,7 +2,7 @@
 
 This project was created with Rails 5 + PostgreSQL with GraphQL. 
 
-The GraphQL endpoint available at https://quickshop-shopify.herokuapp.com/graphql (POST)
+The GraphQL endpoint is available at https://quickshop-shopify.herokuapp.com/graphql (POST)
 
 Full documentation of API: https://quickshop-shopify.herokuapp.com/
 
@@ -12,7 +12,7 @@ Full documentation of API: https://quickshop-shopify.herokuapp.com/
 The GraphQL API allows users to access and manipulate product data through queries and mutations to perform actions such as purchasing product by id, adding items to shopping cart, checking out shopping cart etc.
 
 ## Usage of API
-To use the API, you could use API testing tools such as Insomnia (Personal Preference as it provides GraphQL support) and Postman
+To use the API, you could use API testing tools such as Insomnia (Preferred tool as it provides GraphQL support) and Postman
 
 POST Request to https://quickshop-shopify.herokuapp.com/graphql
 
@@ -37,7 +37,7 @@ Sample query:
 
 The GraphQL endpoint will be available at `\graphql`
 The GraphQL IDE will be available at `\graphql` and can accessed be through browser
-The Full API documentation will be available at `\` and can be navigated through browser
+The full API documentation will be available at `\` and can be navigated through browser
 
 
 ### Complete purhcase with a shopping cart
