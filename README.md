@@ -23,11 +23,11 @@ Sample query:
 
 0. Install required dependencies:
 
-    -Ruby
+    * Ruby
     
-    -Ruby on Rails
+    * Ruby on Rails
     
-    -PostgreSQL
+    * PostgreSQL
 
 
 1. Install dependencies using `bundle install`
