@@ -20,15 +20,13 @@ POST Request to https://quickshop-shopify.herokuapp.com/graphql
 Sample query:
 {"query":"query {product_by_id(product_id: 1){title,description,price,shipping,inventory_count,sold_count}}"}
 
-###Running Project locally
+###Running Project locally###
 
 0. Install required dependencies
-
-```
 -Ruby
 -Ruby on Rails
 -PostgreSQL
-```
+
 
 1. Install dependencies using `bundle install`
 2. Setup database using `rails db:create` and `rails db:migrate`
@@ -40,7 +38,7 @@ The GraphQL IDE will be available at `\graphql` and can accessed be through brow
 The Full API documentation will be available at `\` and can be navigated through browser
 
 
-### Steps to purhcase with a shopping cart
+### Sample operation: Complete purhcase with a shopping cart
 
 1. Create a shopping cart with your desired user_id
 ```
