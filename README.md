@@ -1,4 +1,4 @@
-# Hello fellow Shopifolks! Welcome to QuickShop
+# Welcome to Quickshop, fellow Shopifolks!
 
 This project was created with Rails 5 + PostgreSQL with GraphQL. 
 
@@ -21,10 +21,10 @@ Sample query:
 
 ## Running Project locally
 
-0. Install required dependencies
--Ruby
--Ruby on Rails
--PostgreSQL
+0. Install required dependencies:
+    -Ruby
+    -Ruby on Rails
+    -PostgreSQL
 
 
 1. Install dependencies using `bundle install`
