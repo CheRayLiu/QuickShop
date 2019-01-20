@@ -8,7 +8,7 @@ https://docs.google.com/document/d/1J49NAOIoWYOumaoQCKopPfudWI_jsQWVKlXmw1f1r-4/
 
 The GraphQL endpoint available at https://quickshop-shopify.herokuapp.com/graphql (POST)
 
-Full documentation of API: https://quickshop-shopify.herokuapp.com/graphql
+Full documentation of API: https://quickshop-shopify.herokuapp.com/
 
 
 **NOTE:** All requests to the GraphQL endpoint should be a POST request.
@@ -58,6 +58,7 @@ The Full API documentation will be available at `\` and can be navigated through
 {"query":"mutation {check_out_cart(user_id: 101123){user_id, completed, total_cost, cart_items{product_id, quantity}}}"}
 ```
 
+Additional functionalities can be found in the API documentation [here][https://quickshop-shopify.herokuapp.com/]
 
 ### Coding style
 
