@@ -60,7 +60,7 @@ The full API documentation will be available at `\` and can be navigated through
 Additional functionalities can be found in the API documentation [here](https://quickshop-shopify.herokuapp.com/)
 
 ## Security
-* The GraphQL services only provide HTTPS endpoints, which provides protects authentication credentials in transit
+* The GraphQL services only provide HTTPS endpoints, which protects authentication credentials in transit
 * All the GraphQL endpoint queries have error handling that allows user to know why their requests has failed.
 
 ## Coding style
