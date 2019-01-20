@@ -1,4 +1,4 @@
-# Welcome to Quickshop, fellow Shopifolks!
+# Welcome to QuickShop, fellow Shopifolks!
 
 This project was created with Rails 5 + PostgreSQL with GraphQL. 
 
