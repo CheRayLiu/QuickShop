@@ -40,7 +40,7 @@ The GraphQL IDE will be available at `\graphql` and can accessed be through brow
 The full API documentation will be available at `\` and can be navigated through browser
 
 
-### Complete purhcase with a shopping cart
+## Complete purhcase with a shopping cart
 
 1. Create a shopping cart with your desired user_id
 ```
@@ -58,6 +58,10 @@ The full API documentation will be available at `\` and can be navigated through
 ```
 
 Additional functionalities can be found in the API documentation [here](https://quickshop-shopify.herokuapp.com/)
+
+## Security
+* The GraphQL services only provide HTTPS endpoints, which provides protects authentication credentials in transit
+* All the GraphQL endpoint queries have error handling that allows user to know why their requests has failed.
 
 ## Coding style
 
