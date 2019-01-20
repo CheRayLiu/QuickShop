@@ -1,7 +1,10 @@
 # QuickShop (Shopify Developer Challenge 2019 Summer)
 
 This project was created with Rails 5 and PostgreSQL with GraphQL. 
-Summer 2019 Developer Intern Challenge Question: https://docs.google.com/document/d/1J49NAOIoWYOumaoQCKopPfudWI_jsQWVKlXmw1f1r-4/edit
+
+Summer 2019 Developer Intern Challenge Question: 
+
+https://docs.google.com/document/d/1J49NAOIoWYOumaoQCKopPfudWI_jsQWVKlXmw1f1r-4/edit
 
 The GraphQL endpoint available at https://quickshop-shopify.herokuapp.com/graphql (POST)
 
@@ -12,7 +15,7 @@ Full documentation of API: https://quickshop-shopify.herokuapp.com/graphql
 
 The GraphQL API allows users to access and manipulate product data through queries and mutations to perform actions such as purchasing product by id, adding items to shopping cart, checking out shopping cart etc.
 
-###Usage of API
+### Usage of API
 To use the API, you could use API testing tools such as Insomnia (Personal Preference as it provides GraphQL support) and Postman
 
 POST Request to https://quickshop-shopify.herokuapp.com/graphql
@@ -20,7 +23,7 @@ POST Request to https://quickshop-shopify.herokuapp.com/graphql
 Sample query:
 {"query":"query {product_by_id(product_id: 1){title,description,price,shipping,inventory_count,sold_count}}"}
 
-###Running Project locally###
+### Running Project locally
 
 0. Install required dependencies
 -Ruby
