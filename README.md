@@ -54,7 +54,7 @@ The Full API documentation will be available at `\` and can be navigated through
 {"query":"mutation {check_out_cart(user_id: 101123){user_id, completed, total_cost, cart_items{product_id, quantity}}}"}
 ```
 
-Additional functionalities can be found in the API documentation [here][https://quickshop-shopify.herokuapp.com/]
+Additional functionalities can be found in the API documentation [here](https://quickshop-shopify.herokuapp.com/)
 
 ## Coding style
 
