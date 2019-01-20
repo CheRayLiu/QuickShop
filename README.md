@@ -37,7 +37,7 @@ The GraphQL IDE will be available at `\graphql` and can accessed be through brow
 The Full API documentation will be available at `\` and can be navigated through browser
 
 
-## Sample operation: Complete purhcase with a shopping cart
+### Complete purhcase with a shopping cart
 
 1. Create a shopping cart with your desired user_id
 ```
