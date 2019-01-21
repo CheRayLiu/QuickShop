@@ -36,7 +36,9 @@ Sample query:
 4. Start the server with `rails server`!
 
 The GraphQL endpoint will be available at `\graphql`
+
 The GraphQL IDE will be available at `\graphql` and can accessed be through browser
+
 The full API documentation will be available at `\` and can be navigated through browser
 
 
