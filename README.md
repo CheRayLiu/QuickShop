@@ -13,7 +13,7 @@ The GraphQL API allows users to access and manipulate product data through queri
 ## Usage of API
 To use the API, you could use API testing tools such as Insomnia (Preferred tool as it provides GraphQL support) and Postman
 
-The GraphQL endpoint is available at https://quickshop-shopify.herokuapp.com/graphql (POST)
+The GraphQL endpoint is available at [https://quickshop-shopify.herokuapp.com/graphql] (POST)
 
 Sample query:
 {"query":"query {product_by_id(product_id: 1){title,description,price,shipping,inventory_count,sold_count}}"}
